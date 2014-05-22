@@ -9,7 +9,7 @@ import org.apache.flume.Context
  * Created by caojia on 5/21/14.
  */
 object KafkaProducer {
-  def apply(context: Context): Producer[String, String] = {
+  def apply[T, S](context: Context): Producer[T, S] = {
     val props: Properties = new Properties()
     // see https://kafka.apache.org/documentation.html#producerapi
     context.getParameters.foreach({
@@ -18,7 +18,7 @@ object KafkaProducer {
       }
     })
     val producerConfig = new ProducerConfig(props)
-    new Producer[String, String](producerConfig)
+    new Producer[T, S](producerConfig)
   }
 
 }
