@@ -9,8 +9,6 @@ scalaVersion := "2.10.3"
 
 resolvers += "local maven" at ("file://%s/.m2/repository" format Path.userHome.absolutePath)
 
-resolvers += "Credit Ease Maven" at "http://10.105.75.10:8081/nexus/content/groups/public/"
-
 resolvers += "Hadoop Releases" at "https://repository.cloudera.com/content/repositories/releases/"
 
 resolvers += "Cloudera Repos" at "https://repository.cloudera.com/artifactory/cloudera-repos/"
